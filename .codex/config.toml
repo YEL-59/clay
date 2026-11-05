@@ -1,0 +1,12 @@
+# Codex Configuration for Avengerse (Avengers Protocol)
+# Version: 1.0
+
+[project]
+name = "Avengerse"
+description = "Codex-Powered Multi-Agent Full-Stack Development System"
+version = "1.0.0"
+default_agent = "iron_man"
+
+[agents]
+directory = ".codex/agents"
+skills_directory = ".agents/skills"

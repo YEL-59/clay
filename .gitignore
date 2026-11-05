@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+.next/
+dist/
+build/
+coverage/
+.turbo/
+
+# Local environment and secrets
+!.env.example
+*.pem
+*.key
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+
+# Local client inputs may contain confidential information.
+# Uncomment the following lines if client documents should never be committed:
+# input/client-docs/*
+# !input/client-docs/.gitkeep
+config.bat
