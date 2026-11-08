@@ -10,8 +10,6 @@ coverage/
 .turbo/
 
 # Local environment and secrets
-.env
-.env.*
 !.env.example
 *.pem
 *.key
@@ -22,10 +20,10 @@ coverage/
 Thumbs.db
 
 # Editors
-.vscode/
 .idea/
 
 # Local client inputs may contain confidential information.
 # Uncomment the following lines if client documents should never be committed:
 # input/client-docs/*
 # !input/client-docs/.gitkeep
+config.bat
