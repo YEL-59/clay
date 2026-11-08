@@ -17,13 +17,13 @@
 
 ## 1. Project Information & Metadata
 
-- **Project Name**: [PROJECT_NAME - e.g., NovaDesk / ApexCRM / MedPulse]
-- **Project Type**: Full-Stack Web + Backend + Optional Mobile
-- **Project Status**: `new` <!-- Options: new / existing / migration -->
+- **Project Name**: Shifatdevs Admin & Commerce Suite (Raye Striped-Shirt)
+- **Project Type**: Full-Stack MERN (Storefront + Admin Dashboard + Express API)
+- **Project Status**: `existing` <!-- Options: new / existing / migration -->
 - **Client Requirements Source**: [README.md](README.md)
-- **Problem & Product Summary**: [Concise one-line summary of what this application does]
-- **Target Audience / End Users**: [Target audience e.g., Operations teams, general public]
-- **Target Delivery / Milestones**: [e.g., MVP in 4 weeks, Production release in 8 weeks]
+- **Problem & Product Summary**: A direct-to-consumer apparel commerce suite with real-time sales telemetry, drag-and-drop Kanban fulfillment, size-matrix inventory, customer CRM, anthropometric Size Finder, and live promotional drop engine.
+- **Target Audience / End Users**: Store founders & fulfillment operators (Admin), retail shoppers in Bangladesh (Storefront).
+- **Target Delivery / Milestones**: Full MERN suite with live Storefront and Admin Dashboard.
 
 ---
 
@@ -32,10 +32,10 @@
 | Agent Name | Hero Identity | Primary Domain | Configuration File | Target Directory |
 |---|---|---|---|---|
 | **`iron_man`** | **Chief Orchestrator** | Planning, Delegation, Work Breakdown & Verification | `.codex/agents/iron_man.toml` | Root, `planning/`, `docs/` |
-| **`jarvis`** | **UI/UX & Design** | Design Tokens, Typography, Figma Parsing, 6 UI States | `.codex/agents/jarvis.toml` | `development/frontend/src/styles/`, UI Primitives |
-| **`friday`** | **Frontend Web** | Next.js, React, TypeScript, Forms, Client State | `.codex/agents/friday.toml` | `development/frontend/` |
-| **`edith`** | **Backend & Data** | NestJS, Prisma, PostgreSQL, Redis, REST APIs | `.codex/agents/edith.toml` | `development/backend/` |
-| **`thor`** | **Mobile (Optional)** | Flutter, Dart, Riverpod/Bloc, Cross-Platform App | `.codex/agents/thor.toml` | `development/mobile/` |
+| **`jarvis`** | **UI/UX & Design** | Design Tokens, Typography, Figma Parsing, 6 UI States | `.codex/agents/jarvis.toml` | `development/frontend/src/`, UI Primitives |
+| **`friday`** | **Frontend Web** | React 19, Vite, Storefront, Admin Dashboard, Client State | `.codex/agents/friday.toml` | `development/frontend/` |
+| **`edith`** | **Backend & Data** | Express.js, Node.js, Mongoose/MongoDB, In-Memory Store, REST APIs | `.codex/agents/edith.toml` | `development/backend/` |
+| **`thor`** | **Mobile (Optional)** | Flutter, Dart, Riverpod/Bloc (Inactive for web-only) | `.codex/agents/thor.toml` | `development/mobile/` |
 | **`thanos`** | **QA & Verification** | Unit, Integration, E2E, Acceptance, Bug Snapping | `.codex/agents/thanos.toml` | Test suites across repository |
 | **`ultron`** | **DevOps & Security** | Docker, Nginx, CI/CD, Cyber Security Hardening | `.codex/agents/ultron.toml` | `infrastructure/`, `.github/` |
 
@@ -46,27 +46,24 @@
 ### 3.1 Frontend Configuration (`development/frontend/`)
 > *Friday and Jarvis strictly adhere to these frontend choices.*
 - **Directory**: `development/frontend/`
-- **Framework**: `Next.js (App Router)` <!-- Options: Next.js (App Router) / React (Vite) / Vue / Nuxt / SvelteKit -->
+- **Framework**: `React 19 (Vite 8)` <!-- Options: Next.js (App Router) / React (Vite) / Vue / Nuxt / SvelteKit -->
 - **Language**: `TypeScript` (Strict Mode)
-- **Styling**: `Tailwind CSS` + Semantic CSS Variables (`globals.css`)
-- **UI Primitives**: `Radix UI` / `Shadcn UI primitives`
-- **Client UI State**: `Zustand`
-- **Server State / Data Fetching**: `TanStack Query (React Query)`
-- **Form & Validation**: `React Hook Form` + `Zod`
-- **Testing**: `Vitest` + `React Testing Library` + `Playwright` (E2E)
+- **Styling**: `Tailwind CSS v4` + Glassmorphic Design Tokens (`index.css`)
+- **Animation & Motion**: `GSAP` + Native View Transitions API
+- **Client UI State**: Custom Reactive Store (`adminStore.ts` + Storefront Cart Store)
+- **Media & Asset Management**: `JSZip` + Browser `CacheStorage` API
+- **Testing**: `Vitest` / Testing Scripts
 
 ### 3.2 Backend Configuration (`development/backend/`)
 > *Edith strictly adheres to these backend choices.*
 - **Directory**: `development/backend/`
-- **Framework**: `NestJS (Modular Domain Architecture)` <!-- Options: NestJS / Express / Fastify / Django / FastAPI / Go -->
-- **Language**: `TypeScript` (Strict Mode)
-- **ORM / Database Client**: `Prisma ORM` <!-- Options: Prisma / Drizzle / TypeORM -->
-- **Primary Database**: `PostgreSQL (v15+)` <!-- Options: PostgreSQL / MySQL / MongoDB / SQLite -->
-- **Cache & Queue**: `Redis` (Session caching, rate limiting, background jobs)
-- **Object Storage**: `Local Storage` / `Cloudflare R2` / `AWS S3 compatible`
-- **API Documentation**: `REST (OpenAPI / Swagger via @nestjs/swagger)`
-- **Validation**: `class-validator` + `class-transformer`
-- **Testing**: `Jest` + `Supertest`
+- **Framework**: `Express.js (Node.js v22 LTS)` <!-- Options: NestJS / Express / Fastify / Django / FastAPI / Go -->
+- **Language**: `TypeScript` (Strict Mode with `tsx` / `ts-node`)
+- **ORM / Database Client**: `Mongoose 8` + Fallback In-Memory Seeded Store (`seed = 220`)
+- **Primary Database**: `MongoDB (v7.0+ / Atlas)` with seamless zero-config fallback
+- **API Architecture**: `RESTful Modular Controllers (/api/v1/*)`
+- **Validation**: `Zod` request/response schemas
+- **Testing**: `Jest` + Supertest
 
 ### 3.3 Mobile Configuration (`development/mobile/` — Optional)
 > *Thor is activated only when mobile is set to true.*
