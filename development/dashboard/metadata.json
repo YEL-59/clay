@@ -1,0 +1,6 @@
+{
+  "name": "Shifatdevs Admin",
+  "description": "The back office for Shifatdevs, the striped-shirt shop: sales, an order board you drag from New to Delivered, stock and prices by size, customers, fit insights from the size finder, discount codes, and offline asset management. Light and dark.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

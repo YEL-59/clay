@@ -1,61 +1,46 @@
-# TASK-002: Define Design Tokens & UI States
+# TASK-002: Extract & Setup Admin Dashboard in `development/frontend/`
 
-> **Status**: `BACKLOG`  
-> **Assignee**: `jarvis` (UI/UX Specialist)  
-> **Priority**: `P1` (High)  
+> **Status**: `READY`  
+> **Assignee**: `jarvis`, `friday`  
+> **Priority**: `P0`  
 > **Dependencies**: `TASK-001`  
 > **Master Board**: [planning/task.md](../task.md)
 
 ---
 
 ## 1. Objective & User Story
-As UI/UX specialist (`jarvis`), establish the unified design system, color tokens, typography scales, spacing units, dark mode support, and the 6 mandatory UI states for all screens in coordination with Friday.
+As `jarvis` and `friday`, transfer and configure the complete e-commerce admin dashboard from `clay.zip` (unpacked in `input/clay_extracted/`) into `development/frontend/`, ensuring all 8 views (Overview, Orders Kanban, Products size-matrix, Customers CRM, Fit Insights, Promotions, Offline Assets, Settings), 34 high-res photos, GSAP animations, and glassmorphic styling run with zero errors.
 
 ---
 
 ## 2. Inputs & Context Documents
-- **Design Guidelines**: [development/frontend/DESIGN_GUIDELINES.md](../../development/frontend/DESIGN_GUIDELINES.md)
-- **UI/UX Strategy**: [docs/06-ui-ux-design.md](../../docs/06-ui-ux-design.md)
-- **Client Branding in README**: [README.md](../../README.md)
+- **Extracted Source Code**: `input/clay_extracted/`
+- **Design Tokens & Styles**: `input/clay_extracted/src/index.css`
+- **Requirements**: [README.md](../../README.md) (REQ-F-001 through REQ-F-011)
 
 ---
 
 ## 3. Step-by-Step Execution Plan
-1. Extract brand colors, fonts, and theme preferences from `README.md`.
-2. Configure Tailwind CSS color tokens, shadows, and border radii matching the brand identity.
-3. Establish typographic scale (H1-H6, Body, Caption) using modern sans-serif fonts.
-4. Define standard reusable component patterns for the **6 Mandatory UI States**:
-   - `Default / Success`
-   - `Loading Skeleton`
-   - `Empty State` (with call-to-action)
-   - `Validation / Error State`
-   - `Responsive Layout` (Mobile, Tablet, Desktop)
-   - `Interactive / Hover / Focus State` (WCAG 2.2 AA compliant)
-5. Review with `friday` for direct frontend code implementation.
+1. Copy all assets (`public/`), styles (`src/index.css`), components, pages, stores, and utilities from `input/clay_extracted/` into `development/frontend/`.
+2. Configure `development/frontend/package.json` and `vite.config.ts`.
+3. Install frontend dependencies (`react`, `lucide-react`, `gsap`, `jszip`, `motion`, `tailwindcss`, etc.).
+4. Verify build and type-checking pass without errors (`npm run build` or `tsc --noEmit`).
 
 ---
 
 ## 4. Expected Outputs
-- `development/frontend/DESIGN_GUIDELINES.md` updated with exact CSS variables and Tailwind tokens.
-- UI component design tokens verified for both Light and Dark themes.
+- `development/frontend/` fully operational with the complete back-office dashboard.
+- All 34 images verified in `development/frontend/public/raye/photos/220-raye/`.
 
 ---
 
 ## 5. Acceptance Criteria
-- [ ] Tailwind tokens reflect approved client branding colors and typography.
-- [ ] All 6 mandatory UI states explicitly documented with code patterns.
-- [ ] WCAG 2.2 AA minimum 4.5:1 color contrast ratio verified.
-- [ ] Accessible focus rings (`focus-visible:ring-2`) specified for all interactive elements.
+- [ ] Admin dashboard compiles cleanly without TypeScript errors.
+- [ ] All 8 dashboard tabs render with 6 mandatory UI states.
+- [ ] Pointer drag-and-drop Kanban board functions properly.
 
 ---
 
 ## 6. Verification Evidence (Thanos)
-- **Status**: `Pending Verification`
-- **Output Log**: Awaiting execution.
-
----
-
-## 7. Fresh Session Handoff
-```markdown
-planning/updateplanning.md পড়ে TASK-003 শুরু করো।
-```
+- **Command**: `cd development/frontend && npm run build`
+- **Status**: `Pending`
