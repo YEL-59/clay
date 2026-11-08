@@ -1,24 +1,20 @@
-# Frontend Application (`development/frontend/`)
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
+</div>
 
-This directory houses the frontend application. The framework, language, styling, and state management are configured centrally in `project.config.md`.
+# Run and deploy your AI Studio app
 
-## Stack Overview
-- Defined in: `project.config.md`
-- UI/UX Guidelines: `DESIGN_GUIDELINES.md` (mandatory design tokens, component standards, and 6 UI states)
+This contains everything you need to run your app locally.
 
-## Getting Started
+View your app in AI Studio: https://ai.studio/apps/27c00cd9-8df3-44cd-ba13-44199b7173f5
 
-```bash
-cd development/frontend
-npm install
-npm run dev
-```
+## Run Locally
 
-Open [http://localhost:3000](http://localhost:3000) to view the application in the browser.
+**Prerequisites:**  Node.js
 
-## Scripts
-- `npm run dev` - Start development server
-- `npm run build` - Build production bundle
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run test` - Run tests
+
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
