@@ -4,10 +4,10 @@
   "description": "Express.js REST API & Mongoose In-Memory/Atlas Backend for Raye Striped-Shirt Apparel Suite",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
-    "start:dev": "tsx watch src/server.ts",
-    "build": "tsc",
-    "start": "node dist/server.js",
+    "dev": "node init && tsx watch src/server.ts",
+    "start:dev": "node init && tsx watch src/server.ts",
+    "build": "node init && tsc",
+    "start": "node init && node dist/server.js",
     "test": "jest --runInBand",
     "test:api": "jest test/api.test.ts --runInBand --detectOpenHandles"
   },
